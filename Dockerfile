@@ -99,7 +99,8 @@ VOLUME ["/data"]
 ENV PATH="/opt/venv/bin:$PATH"
 ENV PATH="/data/bin:$PATH"
 ENV PATH="/data/util/scripts:$PATH"
+ENV PATH="/home/weewx/bin:$PATH"
 # ENTRYPOINT ["./entrypoint.sh"]
 # CMD ["/data/weewx.conf"]
 
-CMD["exec /home/weewx/bin/weewxd","/data/weewx.conf"] for simplicity
+CMD["weewxd","/data/weewx.conf"] for simplicity
