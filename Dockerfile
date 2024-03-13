@@ -53,6 +53,7 @@ RUN bin/wee_extension --install /tmp/weewx-mqtt.zip && \
 	bin/wee_extension --install /tmp/weewx-interceptor.zip && \
 	bin/wee_extension --install /tmp/weewx-belchertown.tar.gz
 COPY src/entrypoint.sh src/version.txt ./
+RUN chmod +x ./entrypoint.sh
 
 # ===== FINAL-STAGE ====
 
