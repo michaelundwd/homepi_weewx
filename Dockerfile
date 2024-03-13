@@ -1,7 +1,8 @@
 # LORDSHIPWEATHER.UK docker image (weewx-docker)
 # Copied from felddy/weewx and modified to work!
 # last updated 24/05/2023 -> weewx-4.10.2
-# copied to homepi_weewx on 11/03/2024; second go
+# copied to homepi_weewx on 11/03/2024
+# this version last updated 13/03/2024 
 
 #==== INSTALL-WEEWX-STAGE =====
 
@@ -98,7 +99,7 @@ VOLUME ["/data"]
 ENV PATH="/opt/venv/bin:$PATH"
 ENV PATH="/data/bin:$PATH"
 ENV PATH="/data/util/scripts:$PATH"
-ENTRYPOINT ["./entrypoint.sh"]
-CMD ["/data/weewx.conf"]
+# ENTRYPOINT ["./entrypoint.sh"]
+# CMD ["/data/weewx.conf"]
 
-# could try CMD[:/home/weewx/bin/weewxd","/data/weewx.conf"] for simplicity
+CMD[:/home/weewx/bin/weewxd","/data/weewx.conf"] for simplicity
