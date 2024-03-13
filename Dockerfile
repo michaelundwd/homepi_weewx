@@ -103,4 +103,4 @@ ENV PATH="/home/weewx/bin:$PATH"
 # ENTRYPOINT ["./entrypoint.sh"]
 # CMD ["/data/weewx.conf"]
 
-CMD["weewxd","/data/weewx.conf"] for simplicity
+CMD["./bin/weewxd","/data/weewx.conf"] for simplicity
