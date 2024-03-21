@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/sh
 
 # all code below here to the final fi is skipped for testing a highly compact entrypoint.sh
 #if [ ]]; then
@@ -45,8 +45,8 @@ copy_default_config() {
 #	code was inserted here to copy /data/bin/user/belchertown.py to /home/weewx/bin/user/belchertown.py
 #	so that all changes relating to Belchertown skin are external to the container where I can modify them
 
-chmod 777 /home/weewx/bin/user
+chmod 777 ./bin/user
 cp /data/bin/user/belchertown.py ./bin/user
-chmod 775 /home/weewx/bin/user
+chmod 775 ./bin/user
 
 ./bin/weewxd "$@"
