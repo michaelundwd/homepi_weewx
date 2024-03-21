@@ -46,7 +46,7 @@ copy_default_config() {
 #	so that all changes relating to Belchertown skin are external to the container where I can modify them
 
 chmod 777 /home/weewx/bin/user
-cp /data/bin/user/belchertown.py /home/weewx/bin/user/belchertown.py
+cp /data/bin/user/belchertown.py /home/weewx/bin/user
 chmod 775 /home/weewx/bin/user
 
 ./bin/weewxd "$@"
