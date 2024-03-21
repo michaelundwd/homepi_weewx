@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # all code below here to the final fi is skipped for testing a highly compact entrypoint.sh
-if [ ]]; then
+#if [ ]]; then
 
 set -o nounset
 set -o errexit
@@ -38,31 +38,8 @@ copy_default_config() {
   sed -i "s/SQLITE_ROOT =.*/SQLITE_ROOT = \/data/g" "${CONF_FILE}"
 }
 
-if [ "$1" = "--gen-test-config" ]; then
-  copy_default_config
-  echo "Generating a test configuration."
-  ./bin/wee_config --reconfigure --no-prompt "${CONF_FILE}"
-  exit 0
-fi
 
-if [ "$1" = "--shell" ]; then
-  /bin/sh
-  exit $?
-fi
-
-if [ "$1" = "--upgrade" ]; then
-  ./bin/wee_config --upgrade --no-prompt --dist-config weewx.conf "${CONF_FILE}"
-  exit $?
-fi
-
-if [ ! -f "${CONF_FILE}" ]; then
-  copy_default_config
-  echo "Running configuration tool."
-  ./bin/wee_config --reconfigure "${CONF_FILE}"
-  exit 1
-fi
-
-fi
+#fi
 # this is the end of the code to be skipped
 
 #	code was inserted here to copy /data/bin/user/belchertown.py to /home/weewx/bin/user/belchertown.py
