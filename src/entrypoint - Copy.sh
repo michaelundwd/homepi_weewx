@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# all code below here to the final fi is skipped for testing a highly compact entrypoint.sh
-if [ ]]; then
-
 set -o nounset
 set -o errexit
 set -o pipefail
@@ -62,12 +59,8 @@ if [ ! -f "${CONF_FILE}" ]; then
   exit 1
 fi
 
-fi
-# this is the end of the code to be skipped
-
-#	code was inserted here to copy /data/bin/user/belchertown.py to /home/weewx/bin/user/belchertown.py
-#	so that all changes relating to Belchertown skin are external to the container where I can modify them
-
-cp /data/bin/user/belchertown.py /home/weewx/bin/user/belchertown.py
+#	code was inserted here to copy /home/weewx/bin/userbelcherton.py to /data/bin/user/belchertown.py.docker
+#	followed by overwriting it with /data/bin/user/belchertown.py
+#	so that all changes relating to Belchertown skin are external to the container where I can see them
 
 ./bin/weewxd "$@"

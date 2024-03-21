@@ -103,4 +103,4 @@ ENV PATH="/data/util/scripts:$PATH"
 ENTRYPOINT ["./entrypoint.sh"]
 CMD ["/data/weewx.conf"]
 
-# tried, but does not workCMD["./bin/weewxd","/data/weewx.conf"] for simplicity
+# tried, but does not work CMD["./bin/weewxd","/data/weewx.conf"] for simplicity
