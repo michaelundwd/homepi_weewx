@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # all code below here to the final fi is skipped for testing a highly compact entrypoint.sh
 #if [ ]]; then
