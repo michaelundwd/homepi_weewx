@@ -82,7 +82,7 @@ WORKDIR ${WEEWX_HOME}
 COPY --from=install-weewx-stage /opt/venv /opt/venv
 COPY --from=install-weewx-stage ${WEEWX_HOME} ${WEEWX_HOME}
 
-COPY /opt/weewx/bin/user/belchertown.py ${WEEWX_HOME}/bin/user
+# COPY /opt/weewx/bin/user/belchertown.py ${WEEWX_HOME}/bin/user
 
 # Set Locale and TimeZone - best to use explicit form of en_GB.UTF-8, rather than OS-LOCALE
 
