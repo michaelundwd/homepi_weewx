@@ -49,8 +49,9 @@ ls -l ./bin
 chmod 777 ./bin/user
 ls -l ./bin
 
+rm ./bin/user/belchertown.py
 ls -l /data/bin/user
-#cp /data/bin/user/belchertown.py ./bin/user/
+cp /data/bin/user/belchertown.py ./bin/user/
 ls -l /data/bin/user
 
 chmod 775 ./bin/user
