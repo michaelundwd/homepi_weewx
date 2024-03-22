@@ -47,10 +47,11 @@ copy_default_config() {
 
 ls -l ./bin
 chmod 777 ./bin/user
-
 ls -l ./bin
+
+ls -l /data/bin/user
 cp /data/bin/user/belchertown.py ./bin/user/
-ls -l ./bin/user
+ls -l /data/bin/user
 
 chmod 775 ./bin/user
 ls -l ./bin
