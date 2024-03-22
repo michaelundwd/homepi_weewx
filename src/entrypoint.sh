@@ -49,6 +49,6 @@ copy_default_config() {
 #cp /data/bin/user/belchertown.py ./bin/user
 #chmod 775 ./bin/user
 
-cp ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
+#cp ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
 
 ./bin/weewxd "$@"
