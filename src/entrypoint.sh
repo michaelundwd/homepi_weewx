@@ -42,8 +42,8 @@ copy_default_config() {
 #fi
 # this is the end of the code to be skipped
 
-#	code was inserted here to copy /data/bin/user/belchertown.py to /home/weewx/bin/user/belchertown.py
-#	so that all changes relating to Belchertown skin are external to the container where I can modify them
+#	code was inserted here to copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py
+#	so that all Belchertown skin configuration is external to the container where I can modify them from homepi, not the weewx container
 
 chmod 777 ./bin/user
 cp /data/bin/user/belchertown.py ./bin/user

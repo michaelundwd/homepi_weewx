@@ -100,7 +100,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 ENV PATH="/data/bin:$PATH"
 ENV PATH="/data/util/scripts:$PATH"
 # ENV PATH="/home/weewx/bin:$PATH"
-#ENTRYPOINT ["./entrypoint.sh"]   #de-activated
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["/data/weewx.conf"]
 
 # tried, but does not work CMD["./bin/weewxd","/data/weewx.conf"] for simplicity
