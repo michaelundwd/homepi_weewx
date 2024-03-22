@@ -56,7 +56,7 @@ echo /data/bin/user
 ls -l /data/bin/user
 cp /data/bin/user/belchertown.py ./bin/user/
 echo .bin/user
-ls -l .bin/user
+ls -l ./bin/user
 
 chmod 775 ./bin/user
 echo ./bin
