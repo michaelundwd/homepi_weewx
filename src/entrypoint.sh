@@ -48,10 +48,10 @@ copy_default_config() {
 
 chmod 777 ./bin/user
 
-echo ./bin/user before move
+echo ./bin/user before remove
 ls -l ./bin/user
-#rm ./bin/user/belchertown.py
-mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
+rm -f ./bin/user/belchertown.py
+#mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
 echo ./bin/user after remove
 ls -l ./bin/user
 cp -f /data/bin/user/belchertown.py ./bin/user/
