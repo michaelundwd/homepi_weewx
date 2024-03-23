@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# all code below here to the final fi is skipped for testing a highly compact entrypoint.sh
-#if [ ]]; then
+# mju - latest mods 23/03/2024 to simplify to the minimum working level
 
 set -o nounset
 set -o errexit
@@ -16,9 +15,7 @@ if [ "$1" = "--version" ]; then
 fi
 
 if [ "$(id -u)" = 0 ]; then
-  # set timezone using environment
-  ln -snf /usr/share/zoneinfo/"${TIMEZONE:-UTC}" /etc/localtime
-  # start the syslog daemon as root
+  echo start the syslog daemon as root user
   /sbin/syslogd -n -S -O - &
   if [ "${WEEWX_UID:-weewx}" != 0 ]; then
     # drop privileges and restart this script
@@ -28,25 +25,7 @@ if [ "$(id -u)" = 0 ]; then
   fi
 fi
 
-copy_default_config() {
-  # create a default configuration on the data volume
-  echo "Creating a configration file on the container data volume."
-  cp weewx.conf "${CONF_FILE}"
-  echo "The default configuration has been copied."
-  # Change the default location of the SQLITE database to the volume
-  echo "Setting SQLITE_ROOT to the container volume."
-  sed -i "s/SQLITE_ROOT =.*/SQLITE_ROOT = \/data/g" "${CONF_FILE}"
-}
-
-
-#fi
-# this is the end of the code to be skipped
-
-#	copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py
-#	means all Belchertown skin configuration is external to the container where they can be modified
-
-chmod 777 ./bin/user
+#	copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py enables updates from the host
 cp -f /data/bin/user/belchertown.py ./bin/user/
-chmod 775 ./bin/user
 
 ./bin/weewxd "$@"

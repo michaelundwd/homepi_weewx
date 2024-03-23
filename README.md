@@ -1,2 +1,2 @@
-# homepi_weewx
- Enables weewx to run in a container on homepi
+# homepi_weewx_dev
+ development version, starting from stable
