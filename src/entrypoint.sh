@@ -42,31 +42,27 @@ copy_default_config() {
 #fi
 # this is the end of the code to be skipped
 
-#	code was inserted here to copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py
-#	so that all Belchertown skin configuration is external to the container where I can modify them from homepi, not the weewx container
-# necessary to remove belchertown.py before copying because of permissions
+#	copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py
+#	means all Belchertown skin configuration is external to the container where they can be modified
 
 # enable write access to ./bin/user
 chmod 777 ./bin/user
 
-echo ./bin/user container before remove
-ls -l ./bin/user
+#echo ./bin/user container before remove
+#ls -l ./bin/user
 #rm -f ./bin/user/belchertown.py
 #mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
 #echo /data/bin/user host after move
 #ls -l /data/bin/user
-echo ./bin/user container after remove
-ls -l ./bin/user
-echo /data/bin/user host before copy
-ls -l /data/bin/user
-cp -f /data/bin/user/belchertown.py ./bin/user/
-echo .bin/user container after copy
-ls -l ./bin/user
-
-# restore ./bin/user privileges
-chmod 775 ./bin/user
-
+#echo ./bin/user container after remove
+#ls -l ./bin/user
+#echo /data/bin/user host before copy
 #ls -l /data/bin/user
-#cp ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
+cp -f /data/bin/user/belchertown.py ./bin/user/
+#echo .bin/user container after copy
+#ls -l ./bin/user
+
+# remove write access to ./bin/user 
+chmod 775 ./bin/user
 
 ./bin/weewxd "$@"
