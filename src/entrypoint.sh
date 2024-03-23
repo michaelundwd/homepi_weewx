@@ -51,11 +51,14 @@ chmod 777 ./bin/user
 #echo ./bin
 #ls -l ./bin
 
+echo ./bin/user before remove
+ls -l ./bin/user
+rm ./bin/user/belchertown.py
 #mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
-#echo /data/bin/user
-ls -l ./bin/user/belchertown.py
+echo ./bin/user after remove
+ls -l ./bin/user
 cp -f /data/bin/user/belchertown.py ./bin/user/
-echo .bin/user/belchertown.py
+echo .bin/user after copy
 ls -l ./bin/user
 
 chmod 775 ./bin/user
