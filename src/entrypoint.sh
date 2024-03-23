@@ -45,24 +45,8 @@ copy_default_config() {
 #	copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py
 #	means all Belchertown skin configuration is external to the container where they can be modified
 
-# enable write access to ./bin/user
 chmod 777 ./bin/user
-
-#echo ./bin/user container before remove
-#ls -l ./bin/user
-#rm -f ./bin/user/belchertown.py
-#mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
-#echo /data/bin/user host after move
-#ls -l /data/bin/user
-#echo ./bin/user container after remove
-#ls -l ./bin/user
-#echo /data/bin/user host before copy
-#ls -l /data/bin/user
 cp -f /data/bin/user/belchertown.py ./bin/user/
-#echo .bin/user container after copy
-#ls -l ./bin/user
-
-# remove write access to ./bin/user 
 chmod 775 ./bin/user
 
 ./bin/weewxd "$@"
