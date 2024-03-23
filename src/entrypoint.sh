@@ -45,21 +45,22 @@ copy_default_config() {
 #	code was inserted here to copy belchertown.py from /data/bin/user to /home/weewx/bin/user/belchertown.py
 #	so that all Belchertown skin configuration is external to the container where I can modify them from homepi, not the weewx container
 
-
 chmod 777 ./bin/user
 
-echo ./bin/user before remove
+echo ./bin/user container before move
 ls -l ./bin/user
-rm -f ./bin/user/belchertown.py
-#mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
-echo ./bin/user after remove
+echo /data/bin/user host before move
+ls -l /data/bin/user
+mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
+echo /data/bin/user host after move
+ls -l /data/bin/user
+echo ./bin/user container after move
 ls -l ./bin/user
-cp -f /data/bin/user/belchertown.py ./bin/user/
-echo .bin/user after copy
+cp /data/bin/user/belchertown.py ./bin/user/
+echo .bin/user container after copy
 ls -l ./bin/user
 
 chmod 775 ./bin/user
-
 
 #ls -l /data/bin/user
 #cp ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
