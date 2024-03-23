@@ -47,15 +47,16 @@ copy_default_config() {
 
 chmod 777 ./bin/user
 
-echo ./bin/user container before move
+echo ./bin/user container before remove
 ls -l ./bin/user
-echo /data/bin/user host before move
-ls -l /data/bin/user
-mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
-echo /data/bin/user host after move
-ls -l /data/bin/user
-echo ./bin/user container after move
+rm -f ./bin/user/belchertown.py
+#mv ./bin/user/belchertown.py /data/bin/user/belchertown.py.cntnr
+#echo /data/bin/user host after move
+#ls -l /data/bin/user
+echo ./bin/user container after remove
 ls -l ./bin/user
+echo /data/bin/user host before copy
+ls -l /data/bin/user
 cp /data/bin/user/belchertown.py ./bin/user/
 echo .bin/user container after copy
 ls -l ./bin/user
